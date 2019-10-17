@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+
+  ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+    li {
+      list-style: none;
+      text-align: left;
+      flex: 1 25%;
+      padding: 20px;
+      font: 400 16px 'Open Sans';
+      border: 1px solid #ccc;
+      margin: 0 10px;
+
+      h3 {
+        padding: 5px;
+      }
+    }
+  }
+}

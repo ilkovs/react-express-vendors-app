@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/header'
+import axios from 'axios'
+import './App.scss';
 
-function App() {
+const App = () => {
+
+  const [vendors, setVendors] = useState([])
+  const [click, isClicked] = useState(false)
+
+  const fetchData = async () => {
+    const response = await axios.get('http://localhost:5000/statuses');
+    const data = await response.data;
+    console.log(data)
+    setVendors(data)
+    isClicked(true)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <button onClick={fetchData}>Fetch Data</button>
+      {click ?
+        <ul>
+          {Array.from(vendors).map((vendor, index) => {
+            return <li key={index}>
+              <img src={vendor.logo} alt={vendor.title} />
+              <h2>{vendor.title}</h2>
+              <h3 style={vendor.status === 'Operational' ? { background: 'green', color: '#fff' } : { background: 'red', color: '#fff' }}>{vendor.status}</h3>
+            </li>
+          })}
+        </ul> : ''
+      }
     </div>
   );
 }

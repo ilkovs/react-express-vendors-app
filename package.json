@@ -3,9 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "circular-json": "^0.5.9",
+    "cors": "^2.8.5",
+    "curl-request": "^1.1.1",
+    "dom-parser": "^0.1.6",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "nexmo": "^2.5.1",
+    "node-fetch": "^2.6.0",
+    "node-mailjet": "^3.3.1",
+    "node-sass": "^4.12.0",
+    "nodemailer": "^6.3.1",
+    "nodemon": "^1.19.3",
+    "puppeteer": "^1.20.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "slack-node": "^0.1.8",
+    "website-to-json": "^1.0.22",
+    "xml-serializer": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -13,6 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },
