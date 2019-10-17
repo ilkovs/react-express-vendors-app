@@ -44,7 +44,7 @@ app.get("/statuses", cors(), (req, res) => {
                             port: 587,
                             auth: {
                                 user: process.env.NODEMAILER_USERNAME,
-                                pass: process.env.NODEMAILER_PASSDOWRD
+                                pass: process.env.NODEMAILER_PASSWORD
                             }
                         });
 
